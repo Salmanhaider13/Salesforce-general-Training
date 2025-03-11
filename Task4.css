@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    height:200px ;
+    align-items: center;
+    background-color:seagreen;
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+}
+
+@media screen and (max-width:480px){
+    form{
+        background-color: tomato;
+        font-family: 'Courier New', Courier, monospace;
+        display: grid;
+        grid-template-columns: auto;
+        height: 400px;
+    }
+}

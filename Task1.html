@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <link rel="stylesheet" href="Task1.css">
+</head>
+<body>
+    <form method="get">
+        <p> Candidate Info</p>
+        <input type="text" name="name" id="name" placeholder="Your Name*" required>
+        <br><br>
+        <input type="email" name="email" id="email" placeholder="Your Email*" required>
+        <br><br>
+        <textarea name="aboutYourself" id="aboutYourself" rows="2" placeholder="About yourself"></textarea>
+        <h4 style="margin-bottom: 5px;">Interests:</h4>
+        <select name="interests" id="interests" style="width: 100%;">
+            <option value="Fishkeeping" selected>Fishkeeping</option>
+            <option value="Gardening">Gardening</option>
+        </select>
+        <p> Additional Info</p>
+        <textarea name="aboutSchool" id="aboutSchool" rows="2" placeholder="About your school"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

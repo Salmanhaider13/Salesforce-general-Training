@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+}
+
+.news-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 70%;
+
+}
+
+.scrolling-text{
+    background-color:beige;
+}
