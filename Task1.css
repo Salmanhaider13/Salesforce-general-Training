@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+
+.main-container{
+    width: 100%;
+    height: 100vh;
+    background: url(download.jpg) no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.container{
+    z-index: 2;
+    text-align: center;
+    align-content: center;
+}
+
+.circle{
+    transition: 0.25s ease-in-out;
+}
+
+.circle:hover{
+    opacity: 0;
+    cursor: pointer;
+}
