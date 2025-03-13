@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    div{
+        border: 1px solid dimgray;
+    }
+}
+
+.form-container{
+    box-shadow: 5px 5px 15px 0.5px dimgray;
+}
+
+.form-header{
+    text-align: center;
+    color: white;
+    font-size:x-large;
+    border-radius: 5px 5px 0px 0px;
+    font-weight:bolder;
+    padding: 5px 100px 5px 100px;
+    background-color: rgb(9, 128, 76);
+}
+
+.form-body{
+    padding: 30px;
+    background-color:cornsilk;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-field{
+    
+    width: 100%;
+    color: rgb(36, 35, 42);
+    font-size: 16px;
+    line-height: 20px;
+    min-height: 28px;
+    border-radius: 4px;
+    padding: 8px 16px;
+    border: 2px solid transparent;
+    box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+    background: rgb(251, 251, 251);
+}
+
+.form-label{
+    font-size: 16px;
+}
+
+.form-button{
+    display: inline-block;
+    margin-top: 5px;
+    outline: 0;
+    appearance: none;
+    padding: 0px 12px;
+    border: 0px solid transparent;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: rgb(9, 128, 76);
+    box-shadow: rgb(19 170 82 / 40%) 0px 2px 3px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 400;
+    height: 36px;
+}
+
+.hyperlink{
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.hyperlink:hover{
+    color: #0056b3;
+    text-decoration: underline;
+    cursor: pointer;
+}

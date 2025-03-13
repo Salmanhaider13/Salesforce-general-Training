@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="Registration.css">
+</head>
+<body>
+    <div class="container">
+        <form class="form-container">
+            <div class="form-header">
+                <p>Registration Form</p>
+            </div>
+            <div class="form-body">
+                <label for="username" class="form-label">UserName :</label>
+                <input type="text" id="username" class="form-field" name="username" placeholder="Enter your username">
+                <label for="password" class="form-label">Password :</label>
+                <input type="password" id="password" class="form-field" name="password" placeholder="Enter your password">
+                <label for="cpassword" class="form-label">Confirm Password :</label>
+                <input type="password" id="cpassword" class="form-field" name="cpassword" placeholder="Confirm your password">
+                <button type="submit" class="form-button" id="submit">Register</button>
+                <a href="/Login.html" class="hyperlink">For Login</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('submit').addEventListener('click',(event)=>{
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var cpassword = document.getElementById('cpassword').value;
+            if(username.trim()===""){
+                alert('Username cannot be Empty.')
+                document.getElementById('username').focus();
+            }
+            else if(password.trim().length<8){
+                alert('Password cannot be Empty and Length should be atleast 8.')
+                document.getElementById('password').focus();
+            }
+            else if(password!=cpassword){
+                alert('Password and Confirm Password must be same!')
+                document.getElementById('cpassword').focus();
+            }
+            else{
+                location.replace("http://127.0.0.1:5500/RegistrationSuccess.html")
+            }
+        })
+    </script>
+</body>
+</html>
