@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+
+<body>
+    <div>
+        <input type="time" id="time">
+        <button id="submit">Calculate</button>
+        <div id="display"></div>
+    </div>
+    <script>
+        document.getElementById('submit').addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const time = document.getElementById('time').value;
+            if(!time){
+                document.getElementById('display').innerHTML="Select Time first";
+                return;
+            }
+            const[hours,mins]=time.split(':');
+            let [remHours,remMins]=[0,0];
+            remHours=13-parseInt(hours);
+            remMins=0-parseInt(mins);
+            if(remMins<0){
+                remHours--;
+                remMins=60+remMins;
+            }
+            if(remHours<0){
+                remHours=24+remHours;
+            }
+            document.getElementById('display').innerHTML="Time remaining : "+remHours+":"+remMins;
+        });
+    </script>
+</body>
+
+</html>
