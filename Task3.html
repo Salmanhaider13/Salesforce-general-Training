@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+
+<body>
+    <div>
+        <input type="date" id="start-date">
+        <input type="date" id="end-date">
+        <button id="submit">Calculate</button>
+        <div id="display"></div>
+    </div>
+    <script>
+        document.getElementById('submit').addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const startDateValue = document.getElementById('start-date').value;
+            const endDateValue = document.getElementById('end-date').value;
+
+            if (!startDateValue || !endDateValue) {
+                document.getElementById('display').innerHTML = 'Please select both dates.';
+                return;
+            }
+
+            const startDate = new Date(startDateValue);
+            const endDate = new Date(endDateValue);
+
+            const timeDiff = endDate - startDate;
+
+            if (timeDiff < 0) {
+                document.getElementById('display').innerHTML = 'End date cannot be before start date.';
+                return;
+            }
+
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+            document.getElementById('display').innerHTML =
+                `Time difference: ${days} days`;
+        });
+    </script>
+</body>
+
+</html>
