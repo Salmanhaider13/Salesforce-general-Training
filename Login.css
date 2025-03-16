@@ -13,6 +13,7 @@
 
 .form-container{
     box-shadow: 5px 5px 15px 0.5px dimgray;
+    width: 30%;
 }
 
 .form-header{
@@ -80,4 +81,10 @@
     color: #0056b3;
     text-decoration: underline;
     cursor: pointer;
+}
+
+.alert{
+    color: red;
+    font-size: 0.75em;
+    text-transform: capitalize;
 }

@@ -1,4 +1,5 @@
-const separateConsecutiveAscending=(str)=>{
+const separateConsecutiveAscending=()=>{
+    let str=document.getElementById('input-field').value;
     let result = "";
     let previous=0;
     for(let i of str){
@@ -10,7 +11,6 @@ const separateConsecutiveAscending=(str)=>{
         }
         previous=parseInt(i);
     }
-    return result;
+    document.getElementById('display').textContent=`Result : ${result}`;
 }
 
-console.log(separateConsecutiveAscending('135689'))

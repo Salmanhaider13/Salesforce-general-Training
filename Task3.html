@@ -9,10 +9,14 @@
 
 <body>
     <div>
+        <label>Enter Start date : </label>
         <input type="date" id="start-date">
+        <br>
+        <label>Enter End date : </label>
         <input type="date" id="end-date">
+        <br>
         <button id="submit">Calculate</button>
-        <div id="display"></div>
+        <div id="display" style="text-decoration: underline;"></div>
     </div>
     <script>
         document.getElementById('submit').addEventListener('click', (event) => {

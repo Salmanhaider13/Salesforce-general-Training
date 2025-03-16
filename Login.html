@@ -8,13 +8,13 @@
 </head>
 <body>
     <div class="container">
-        <form class="form-container">
+        <form class="form-container" onsubmit="handleSubmit(event)">
             <div class="form-header">
                 <p>Login Form</p>
             </div>
             <div class="form-body">
                 <label for="username" class="form-label">UserName :</label>
-                <input type="text" id="username" class="form-field" name="username" placeholder="Enter your username">
+                <input type="text" id="username" class="form-field" name="username" placeholder="Enter your username" autocomplete="off">
                 <label for="password" class="form-label">Password :</label>
                 <input type="password" id="password" class="form-field" name="password" placeholder="Enter your password">
                 <button type="submit" class="form-button" id="submit">Login</button>
@@ -22,23 +22,6 @@
             </div>
         </form>
     </div>
-    <script>
-        document.getElementById('submit').addEventListener('click',(event)=>{
-            event.preventDefault();
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            if(username.trim()===""){
-                alert('Username cannot be Empty.')
-                document.getElementById('username').focus();
-            }
-            else if(password.trim().length<8){
-                alert('Password cannot be Empty and Length should be atleast 8.')
-                document.getElementById('password').focus();
-            }
-            else{
-                location.replace("http://127.0.0.1:5500/Welcome.html")
-            }
-        })
-    </script>
+    <script src="Login.js"></script>
 </body>
 </html>

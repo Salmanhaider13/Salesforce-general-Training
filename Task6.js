@@ -24,11 +24,15 @@ function createTable(imageArr) {
         let button = document.createElement('button');
         button.textContent = "Download";
         button.addEventListener('click', function () {
-            let a = document.createElement('a');
-            a.href = i;
-            a.download = "image";
-            a.click();
-            a.remove();
+            var imageUrl = i;
+            fetch(imageUrl)
+                .then(response => response.blob())
+                .then(blob => {
+                    var link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = 'image';
+                    link.click();
+                })
         });
         td1.appendChild(img);
         td2.appendChild(button);

@@ -9,9 +9,10 @@
 
 <body>
     <div>
+        <label>Enter Current Time : </label>
         <input type="time" id="time">
         <button id="submit">Calculate</button>
-        <div id="display"></div>
+        <div id="display" style="text-decoration: underline;"></div>
     </div>
     <script>
         document.getElementById('submit').addEventListener('click', (event) => {
@@ -33,7 +34,7 @@
             if(remHours<0){
                 remHours=24+remHours;
             }
-            document.getElementById('display').innerHTML="Time remaining : "+remHours+":"+remMins;
+            document.getElementById('display').innerHTML=`Time remaining = ${remHours}:${remMins}`;
         });
     </script>
 </body>

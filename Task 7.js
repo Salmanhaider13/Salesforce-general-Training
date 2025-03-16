@@ -7,7 +7,7 @@ document.getElementById('submit').addEventListener('click',(event)=>{
         words= text.split('\r\n');
         for(let word of words){
             let result=recursive(word);
-            let str=word+" -> "+"{"+result.char+" : "+result.value+"}<br>";
+            let str=`${word} -> {${result.char} : ${result.value}}<br>`;
             document.getElementById('display').innerHTML+=str;
         }
     }

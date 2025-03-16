@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+
+.list-container{
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: larger;
+}
+
+.list{
+    margin: 10px;
+}
+
+.list-item{
+    text-decoration: none;
+    color: rgb(41, 168, 241);
+}

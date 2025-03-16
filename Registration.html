@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
     <link rel="stylesheet" href="Registration.css">
+    <script src="Registration.js"></script>
 </head>
 <body>
     <div class="container">
-        <form class="form-container">
+        <form class="form-container"  onsubmit="handleSubmit(event)">
             <div class="form-header">
                 <p>Registration Form</p>
             </div>
@@ -24,28 +25,5 @@
             </div>
         </form>
     </div>
-    <script>
-        document.getElementById('submit').addEventListener('click',(event)=>{
-            event.preventDefault();
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            var cpassword = document.getElementById('cpassword').value;
-            if(username.trim()===""){
-                alert('Username cannot be Empty.')
-                document.getElementById('username').focus();
-            }
-            else if(password.trim().length<8){
-                alert('Password cannot be Empty and Length should be atleast 8.')
-                document.getElementById('password').focus();
-            }
-            else if(password!=cpassword){
-                alert('Password and Confirm Password must be same!')
-                document.getElementById('cpassword').focus();
-            }
-            else{
-                location.replace("http://127.0.0.1:5500/RegistrationSuccess.html")
-            }
-        })
-    </script>
 </body>
 </html>
