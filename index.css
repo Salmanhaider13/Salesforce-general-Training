@@ -158,7 +158,7 @@ body {
   width: 100%;
 }
 
-button {
+.button {
   text-decoration: none;
   background: #06c;
   color: white;
@@ -174,14 +174,14 @@ button {
   z-index: 200;
 }
 
-button:last-child {
+.button:last-child {
   background: rgba(0, 0, 0, 0);
   color: #06c;
   border-color: #06c;
   max-width: fit-content;
 }
 
-button:last-child:hover {
+.button:last-child:hover {
   background: #06c;
   color: white;
   border-color: #06c;

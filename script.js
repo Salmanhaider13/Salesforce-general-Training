@@ -1,3 +1,4 @@
+// script.js (optimized version)
 import menuDetails from './menu-details.js';
 
 const backgroundImages = [
@@ -12,82 +13,75 @@ const backgroundImages = [
     'https://www.apple.com/in/home/promos/ipad-pro/images/promo_ipadpro_avail__s271j89g8kii_small.jpg',
 ];
 
-//Set button behaviour
-for(const element of document.getElementsByTagName('button')){
-    element.addEventListener('click',(event)=>{
-        event.preventDefault();
-        event.stopPropagation();
-        location.href='Buy.html';
-    })
-}
+// Button behavior
+document.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        location.href = 'Buy.html';
+    });
+});
 
 // Set background images
-document.querySelectorAll('.service-showcase, .service-card').forEach((element, index) => {
-    element.style.backgroundImage = `url(${backgroundImages[index] || ''})`;
+document.querySelectorAll('.service-showcase, .service-card').forEach((el, i) => {
+    el.style.backgroundImage = `url(${backgroundImages[i] || ''})`;
 });
 
 // Dropdown menu functionality
-const navbarItems = document.querySelectorAll('.navbar-item');
-navbarItems.forEach(item => {
+const createDropdownContent = (elementName, dropdown) => {
+    dropdown.innerHTML = '';
+    dropdown.style.display = 'flex';
+    Object.entries(menuDetails[elementName]).forEach(([section, items], index) => {
+        const ul = document.createElement('ul');
+        const title = document.createElement('li');
+        title.textContent = section;
+        title.style.cssText = 'font-weight: lighter; font-size: 0.8rem;';
+        ul.appendChild(title);
+
+        items.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            if (index === 0) {
+                li.style.cssText = 'font-weight: 600; font-size: 1.5rem; color: black;';
+            }
+            ul.appendChild(li);
+        });
+        dropdown.appendChild(ul);
+    });
+};
+
+document.querySelectorAll('.navbar-item').forEach(item => {
     const dropdown = document.querySelector('.dropdown');
     const elementName = item.textContent.trim();
+    
     if (menuDetails[elementName]) {
-
-    item.addEventListener('mouseenter', () => {
-        dropdown.innerHTML = '';
-        dropdown.style.display = 'flex';
-            Object.entries(menuDetails[elementName]).forEach(([section, items],index) => {
-                const sectionUl = document.createElement('ul');
-                const sectionTitle = document.createElement('li');
-                sectionTitle.textContent = section;
-                sectionTitle.style.fontWeight = 'lighter';
-                sectionTitle.style.fontSize = '0.8rem';
-                sectionUl.appendChild(sectionTitle);
-
-                items.forEach(itemText => {
-                    const li = document.createElement('li');
-                    li.textContent = itemText;
-                    if(index===0){
-                        li.style.fontWeight='600';
-                        li.style.fontSize='1.5rem';
-                        li.style.color='black';
-                    }
-                    sectionUl.appendChild(li);
-                });
-                dropdown.appendChild(sectionUl);
-            });
-            document.querySelector('.navbar').appendChild(dropdown);
-            
-        });
+        item.addEventListener('mouseenter', () => createDropdownContent(elementName, dropdown));
         dropdown.addEventListener('mouseleave', () => {
             dropdown.style.display = 'none';
             dropdown.innerHTML = '';
         });
     }
-}
-);
+});
 
-//toggle to mobile view navbar
-document.querySelector('.container').addEventListener('click', (event) => {
-    event.currentTarget.classList.toggle('change');
-    const dropdown=document.querySelector('.dropdown');
-    if (event.currentTarget.classList.contains('change')) {
+// Mobile navbar toggle
+document.querySelector('.container').addEventListener('click', (e) => {
+    const container = e.currentTarget;
+    const dropdown = document.querySelector('.dropdown');
+    container.classList.toggle('change');
 
-        const sectionul = document.createElement('ul');
+    if (container.classList.contains('change')) {
+        dropdown.innerHTML = '';
+        const ul = document.createElement('ul');
         Object.keys(menuDetails).forEach(section => {
-            const sectionli = document.createElement('li');
-            sectionli.textContent = section.trim();
-            sectionli.style.fontSize='3rem';
-            sectionul.appendChild(sectionli);
+            const li = document.createElement('li');
+            li.textContent = section.trim();
+            li.style.fontSize = '3rem';
+            ul.appendChild(li);
         });
-        dropdown.appendChild(sectionul);
-        document.querySelector('.navbar').appendChild(dropdown);
-        dropdown.style.display = 'flex';
-        dropdown.style.flexDirection = 'column';
-        dropdown.style.height='700px';
-    }
-    else {
+        dropdown.appendChild(ul);
+        dropdown.style.cssText = 'display: flex; flex-direction: column; height: 700px;';
+    } else {
         dropdown.style.display = 'none';
-        dropdown.innerHTML='';
+        dropdown.innerHTML = '';
     }
 });
