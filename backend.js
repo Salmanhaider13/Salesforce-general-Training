@@ -7,16 +7,10 @@ import { getDatabase, set, get, update, remove, ref, child } from "https://www.g
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyDGJtQq5JSw6BprEWOeiqIK62mEFD2mpXc",
-    authDomain: "day-2-task.firebaseapp.com",
-    databaseURL: "https://day-2-task-default-rtdb.firebaseio.com",
-    projectId: "day-2-task",
-    storageBucket: "day-2-task.firebasestorage.app",
-    messagingSenderId: "696129109397",
-    appId: "1:696129109397:web:292df0d230b5e2a81f0a9c",
-    measurementId: "G-MZME7KPF00"
-};
+
+//firebase configuration has been removed for security concerns.
+
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
