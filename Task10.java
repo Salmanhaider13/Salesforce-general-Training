@@ -11,14 +11,11 @@ public class Task10 {
             }
 
             for (int j = 1; j <= i*2-1 ; j++) {
-                if (j==1) {
+                if (j%2==1){
                     System.out.print("*");
                 }
-                else if(j%2==1||j==i*2-1){
-                    System.out.print(" *");
-                }
                 else {
-                    System.out.print(" "+(i-1));
+                    System.out.print(" "+(i-1)+" ");
                 }
             }
 
