@@ -24,7 +24,7 @@ operationButtons.forEach(button => {
             } catch (error) {
                 display.innerHTML = "Mathematical Error";
                 setTimeout(() => {
-                    display.innerHTML = 0;
+                    display.innerHTML = '';
                 }, 1000);
             }
         }
