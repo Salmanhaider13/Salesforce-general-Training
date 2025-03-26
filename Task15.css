@@ -30,6 +30,7 @@ body{
     padding: 10px;
     font-size: larger;
     border-radius: 5px;
+    min-height: 44px;
 }
 
 .button-section{

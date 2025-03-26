@@ -1,8 +1,8 @@
 let display = document.getElementById('display');
-display.innerHTML = 0;
+display.innerHTML = '';
 
 document.getElementById('clear').addEventListener('click', () => {
-    display.innerHTML = 0;
+    display.innerHTML = '';
 });
 
 let numericButtons = document.querySelectorAll('.numeric-button')
